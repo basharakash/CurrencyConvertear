@@ -1,7 +1,8 @@
-import { useState } from "react";
+import {useState} from "react";
 import InputBox from "./Components/InputBox.jsx";
 import UseCurrencyConvertar from "./Hooks/UseCurrencyConvertar.js";
 import BgImg from "./assets/imgs/currencyImg.jpg";
+
 function App() {
     const [amount, setAmount] = useState(0);
     const [from, setFrom] = useState("usd");
@@ -30,7 +31,8 @@ function App() {
             }}
         >
             <div className="w-full">
-                <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
+                <div
+                    className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -43,7 +45,7 @@ function App() {
                                 amount={amount}
                                 currencyOptions={options}
                                 onCurrencyChange={(currency) =>
-                                    setAmount(amount)
+                                    setFrom(currency)
                                 }
                                 seclectCurrency={from}
                                 onAmountChange={(amount) => setAmount(amount)}
